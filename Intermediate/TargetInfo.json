@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "PVZ_USFX_LAB02",
+			"Path": "D:\\Documentos\\Universidad\\SIS457 - Programacion Avanzada\\PVZ_USFX_LAB02\\Source\\PVZ_USFX_LAB02.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "PVZ_USFX_LAB02Editor",
+			"Path": "D:\\Documentos\\Universidad\\SIS457 - Programacion Avanzada\\PVZ_USFX_LAB02\\Source\\PVZ_USFX_LAB02Editor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
