@@ -17,6 +17,9 @@ AZombie::AZombie()
 	{
 		SM_Zombie->SetStaticMesh(ZombieMeshAsset.Object);
 	}
+
+	MovementSpeed = 0.1f;
+	energia = 100.0f;
 }
 
 // Called when the game starts or when spawned
@@ -31,11 +34,13 @@ void AZombie::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	FVector Objetivo = FVector(0.0f, 200.0f, 100.0f);
-	float MovementSpeed = 100.0f;
+	FVector Objetivo = FVector(-800.0f, -600.0f, 160.0f);
+	// MovementSpeed = 100.0f;
 
-	FVector Direccion = (Objetivo - this->GetActorLocation()).GetSafeNormal();
-	float Distancia = FVector::Dist(Objetivo, this->GetActorLocation());
+	//FVector Direccion = (Objetivo - this->GetActorLocation()).GetSafeNormal();
+	FVector Direccion = Objetivo - FVector(-800.0f, 400.0f, 160.0f);
+	//float Distancia = FVector::Dist(Objetivo, this->GetActorLocation());
+	float Distancia = FVector::Dist(Objetivo, FVector(-800.0f, 400.0f, 160.0f));
 
 	float DeltaMove = MovementSpeed * GetWorld()->DeltaTimeSeconds;
 

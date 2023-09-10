@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\PVZ_USFX_LAB02.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{B77732B0-B8FC-4C47-969C-A93A141F1DBD}</UniqueIdentifier>
+      <UniqueIdentifier>{FD58D0E4-0964-4092-A872-1E7DCCF3707E}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\PVZ_USFX_LAB02.Target.cs">
       <Filter>Source</Filter>
@@ -11,8 +11,10 @@
     <None Include="..\..\Source\PVZ_USFX_LAB02Editor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.gitattributes" />
+    <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{3A3D80EC-C70F-4224-9975-EC9582F9B10F}</UniqueIdentifier>
+      <UniqueIdentifier>{B1EF801E-4A0E-478C-BE5E-769042920528}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -24,7 +26,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\PVZ_USFX_LAB02">
-      <UniqueIdentifier>{E7920AAE-F05B-4A8C-8FCC-60DFD139DE76}</UniqueIdentifier>
+      <UniqueIdentifier>{1B879F04-23AD-4BDD-9E09-599F5B2859C6}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\PVZ_USFX_LAB02\Plant.cpp">
       <Filter>Source\PVZ_USFX_LAB02</Filter>
@@ -45,6 +47,12 @@
       <Filter>Source\PVZ_USFX_LAB02</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\PVZ_USFX_LAB02\PVZ_USFX_LAB02GameModeBase.h">
+      <Filter>Source\PVZ_USFX_LAB02</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PVZ_USFX_LAB02\RandomMovementComponent.cpp">
+      <Filter>Source\PVZ_USFX_LAB02</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PVZ_USFX_LAB02\RandomMovementComponent.h">
       <Filter>Source\PVZ_USFX_LAB02</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\PVZ_USFX_LAB02\Zombie.cpp">
