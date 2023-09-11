@@ -38,14 +38,15 @@ void APVZ_USFX_LAB02GameModeBase::BeginPlay()
 	FVector SpawnLocationPlant = FVector(-450.0f, -550.0f, 20.0f);
 	FVector SpawnLocationPlantTemp = SpawnLocationPlant;
 
-
+	int claveMatriz = 0;
 	for (int i = 0; i < 5; i++) {
 		SpawnLocationPlantTemp.X += 100;
 		for (int j = 0; j < 2; j++) {
 			SpawnLocationPlantTemp.Y += 100;
 			APlant* NuevoPlant = GetWorld()->SpawnActor<APlant>(APlant::StaticClass(), SpawnLocationPlantTemp, FRotator::ZeroRotator);
 			vectorPlants.Add(NuevoPlant);
-			int claveMatriz = i+(j*10);
+			//int claveMatriz = i+(j*10);
+			claveMatriz = claveMatriz + 1;
 			mapPlantas.Add(claveMatriz, NuevoPlant);
 			//	SpawnLocationPlant = SpawnLocationPlantTemp;
 		}
@@ -65,6 +66,10 @@ void APVZ_USFX_LAB02GameModeBase::Tick(float DeltaTime)
 		for (int i = 0; i < vectorZombies.Num(); i++) {
 			vectorZombies[i]->MovementSpeed = FMath::FRand() * 0.1f;
 			//vectorZombies[i]->MovementSpeed += i * 1.0f;
+		}
+		for (int i = 1; i < mapPlantas.Num(); i++) {
+			mapPlantas[i]->Energia = FMath::FRand() * 0.1f;
+			if (mapPlantas[i]->Energia == 0.0f) mapPlantas[i]->Destroy();
 		}
 		TiempoTranscurrido = 0.0f;
 	}

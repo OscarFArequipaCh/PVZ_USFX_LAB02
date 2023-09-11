@@ -17,6 +17,8 @@ APlant::APlant()
 	{
 		SM_Planta->SetStaticMesh(ZombieMeshAsset.Object);
 	}
+
+	Energia = 100.0f;
 }
 
 // Called when the game starts or when spawned
