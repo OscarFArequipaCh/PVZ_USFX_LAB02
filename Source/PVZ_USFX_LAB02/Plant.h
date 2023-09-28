@@ -50,4 +50,8 @@ private:
 	/** Handle for efficient management of ShotTimerExpired timer */
 	FTimerHandle TimerHandle_ShotTimerExpired;
 
+public:
+
+	int32 ProyectilesDisparados;
+	FORCEINLINE int32 GetProyectilesDisparados() { return ProyectilesDisparados; }
 };

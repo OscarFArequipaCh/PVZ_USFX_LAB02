@@ -36,4 +36,7 @@ public:
 	virtual void Tick(float DeltaTime) override;
 	float TiempoTranscurrido;
 
+	float TiempoTranscurridoC = 0.0f;
+	int32 ContadorProyectiles = 0;
+	void MostrarContador();
 };

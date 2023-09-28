@@ -31,6 +31,7 @@ APlant::APlant()
 	TiempoTranscurrido = 0.0f;
 	TiempoEntreDisparos = 1.0f;
 	Health = 10.0f;
+	ProyectilesDisparados = 0;
 	Tags.Add(TEXT("Planta"));
 }
 /*
@@ -94,6 +95,7 @@ void APlant::FireShot(FVector FireDirection)
 			{
 				// spawn the projectile
 				World->SpawnActor<AMisiles>(SpawnLocation, FireRotation);
+				ProyectilesDisparados += 1;
 			}
 
 			bCanFire = false;

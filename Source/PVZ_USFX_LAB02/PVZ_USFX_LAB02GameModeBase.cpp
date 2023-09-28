@@ -83,6 +83,7 @@ void APVZ_USFX_LAB02GameModeBase::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 	TiempoTranscurrido += DeltaTime;
+	TiempoTranscurridoC += DeltaTime;
 
 	if (TiempoTranscurrido > 2.0f) {
 		// Iterar sobre el vector de objetos
@@ -126,6 +127,22 @@ void APVZ_USFX_LAB02GameModeBase::Tick(float DeltaTime)
 			ActualZombie->SpawnAfter -= DeltaTime;
 		}
 	}
+
+	if (TiempoTranscurridoC >= 5.0f) {
+		MostrarContador();
+		TiempoTranscurridoC = 0.0f;
+	}
+}
+
+void APVZ_USFX_LAB02GameModeBase::MostrarContador() {
+	int32 aux = 0;
+	aux = ContadorProyectiles;
+	for (APlant* ActualPlanta : vectorPlants) {
+		ContadorProyectiles += ActualPlanta->GetProyectilesDisparados();
+	}
+	ContadorProyectiles -= aux;
+	UE_LOG(LogTemp, Warning, TEXT("Proyectiles Lanzados: %d"), ContadorProyectiles);
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, FString::Printf(TEXT("Proyectiles Lanzados: %d"), ContadorProyectiles));
 }
 
 AZombie* APVZ_USFX_LAB02GameModeBase::SpawnZombie(FVector _spawnPosition)
