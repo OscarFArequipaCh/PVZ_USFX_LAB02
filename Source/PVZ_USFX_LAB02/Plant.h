@@ -26,5 +26,28 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	float Energia;
+	void FireShot(FVector FireDirection);
+	//void OnOverlapBegin(AActor* OverlappedActor, AActor* OtherActor);
+
+	/** Offset from the ships location to spawn projectiles */
+	UPROPERTY(Category = Gameplay, EditAnywhere, BlueprintReadWrite)
+		FVector GunOffset;
+	/* How fast the weapon will fire */
+	UPROPERTY(Category = Gameplay, EditAnywhere, BlueprintReadWrite)
+		float FireRate;
+
+	void ShotTimerExpired();
+
+	float TiempoTranscurrido;
+	float TiempoEntreDisparos;
+	float TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser);
+	float Health = 10.0f;
+
+private:
+	/* Flag to control firing  */
+	uint32 bCanFire : 1;
+
+	/** Handle for efficient management of ShotTimerExpired timer */
+	FTimerHandle TimerHandle_ShotTimerExpired;
+
 };

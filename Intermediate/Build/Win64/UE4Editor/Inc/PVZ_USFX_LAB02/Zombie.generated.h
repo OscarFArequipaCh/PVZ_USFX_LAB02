@@ -8,14 +8,28 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class UPrimitiveComponent;
+class AActor;
+struct FVector;
+struct FHitResult;
 #ifdef PVZ_USFX_LAB02_Zombie_generated_h
 #error "Zombie.generated.h already included, missing '#pragma once' in Zombie.h"
 #endif
 #define PVZ_USFX_LAB02_Zombie_generated_h
 
 #define PVZ_USFX_LAB02_Source_PVZ_USFX_LAB02_Zombie_h_12_SPARSE_DATA
-#define PVZ_USFX_LAB02_Source_PVZ_USFX_LAB02_Zombie_h_12_RPC_WRAPPERS
-#define PVZ_USFX_LAB02_Source_PVZ_USFX_LAB02_Zombie_h_12_RPC_WRAPPERS_NO_PURE_DECLS
+#define PVZ_USFX_LAB02_Source_PVZ_USFX_LAB02_Zombie_h_12_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execOnHit); \
+	DECLARE_FUNCTION(execOnOverlapBeginFunction);
+
+
+#define PVZ_USFX_LAB02_Source_PVZ_USFX_LAB02_Zombie_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execOnHit); \
+	DECLARE_FUNCTION(execOnOverlapBeginFunction);
+
+
 #define PVZ_USFX_LAB02_Source_PVZ_USFX_LAB02_Zombie_h_12_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAZombie(); \
@@ -58,10 +72,7 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AZombie)
 
 
-#define PVZ_USFX_LAB02_Source_PVZ_USFX_LAB02_Zombie_h_12_PRIVATE_PROPERTY_OFFSET \
-	FORCEINLINE static uint32 __PPO__SM_Zombie() { return STRUCT_OFFSET(AZombie, SM_Zombie); }
-
-
+#define PVZ_USFX_LAB02_Source_PVZ_USFX_LAB02_Zombie_h_12_PRIVATE_PROPERTY_OFFSET
 #define PVZ_USFX_LAB02_Source_PVZ_USFX_LAB02_Zombie_h_9_PROLOG
 #define PVZ_USFX_LAB02_Source_PVZ_USFX_LAB02_Zombie_h_12_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \

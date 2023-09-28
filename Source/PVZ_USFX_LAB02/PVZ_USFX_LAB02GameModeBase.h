@@ -23,10 +23,14 @@ private:
 
 	TMap<int32, APlant*> mapPlantas;
 
+	int32 NumberZombiesSpawned = 0;
 protected:
 
 	virtual void BeginPlay() override;
 
+	class AZombie* SpawnZombie(FVector _spawnPosition);
+
+	class APlant* SpawnPlant(FVector _spawnPosition);
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;

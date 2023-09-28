@@ -1,0 +1,3 @@
+D:\Documentos\Universidad\SIS457 - Programacion Avanzada\PVZ_USFX_LAB02\Intermediate\Build\Win64\UE4Editor\Development\PVZ_USFX_LAB02\Definitions.PVZ_USFX_LAB02.h
+D:\Documentos\Universidad\SIS457 - Programacion Avanzada\PVZ_USFX_LAB02\Source\PVZ_USFX_LAB02\TP_Puzzle\TP_PuzzlePlayerController.h
+D:\Documentos\Universidad\SIS457 - Programacion Avanzada\PVZ_USFX_LAB02\Intermediate\Build\Win64\UE4Editor\Inc\PVZ_USFX_LAB02\TP_PuzzlePlayerController.generated.h
