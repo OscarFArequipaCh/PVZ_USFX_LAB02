@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
 #include "PVZ_USFX_LAB02GameModeBase.generated.h"
-class AZombie; class APlant;
+class AZombieCono; class AZombie; class APlant;
 /**
  * 
  */
@@ -28,7 +28,7 @@ protected:
 
 	virtual void BeginPlay() override;
 
-	class AZombie* SpawnZombie(FVector _spawnPosition);
+	class AZombieCono* SpawnZombieCono(FVector _spawnPosition);
 
 	class APlant* SpawnPlant(FVector _spawnPosition);
 public:

@@ -5,7 +5,8 @@
 #include "Plant.h"
 #include "MauseController.h"
 #include "Mause.h"
-
+#include "ZombieCono.h"
+#include "CreatorZ_Terrestres.h"
 APVZ_USFX_LAB02GameModeBase::APVZ_USFX_LAB02GameModeBase()
 {
 	PrimaryActorTick.bCanEverTick = true;
@@ -57,24 +58,32 @@ void APVZ_USFX_LAB02GameModeBase::BeginPlay()
 		SpawnLocationPlantTemp.Y = SpawnLocationPlant.Y;
 	}
 	// mapPlantas[0]->Destroy();
-
+	
 	FTransform SpawnLocation;
 	SpawnLocation.SetLocation(FVector(-350.0f, 350.0f, 20.0f));
 	float initialPositionX = -350.0f;
 	float initialPositionY = 350.0f;
+	ACreatorZombies* CreadorZombie = GetWorld()->SpawnActor<ACreatorZ_Terrestres>(ACreatorZ_Terrestres::StaticClass());
 
 	for (int32 i = 0; i < 5; ++i)
 	{
-		AZombie* NewZombie = SpawnZombie(FVector(initialPositionX + i * 100.0f, initialPositionY, 20.0f));
+		//AZombieCono* NewZombie = SpawnZombieCono(FVector(initialPositionX + i * 100.0f, initialPositionY, 20.0f));
+		
+		AZombie* CZombie = CreadorZombie->OrderZombie("Cono", FVector(initialPositionX + i * 100.0f, initialPositionY, 20.0f));
 
-		if (NewZombie)
+		vectorZombies.Add(CZombie);
+
+		AZombie* NZombie = CreadorZombie->OrderZombie("Normal", FVector(initialPositionX + i * 100.0f, initialPositionY - 100.0f, 20.0f));
+		
+		vectorZombies.Add(NZombie);
+		/*if (NewZombie)
 		{
 			NewZombie->SetSpawnAfter(FMath::RandRange(1, 10));
 			NewZombie->SetActorHiddenInGame(false);
 			NewZombie->SetActorEnableCollision(true);     // Habilita las colisiones si es necesario
 			NewZombie->SetCanMove(false);
 			vectorZombies.Add(NewZombie);
-		}
+		}*/
 	}
 }
 
@@ -145,11 +154,11 @@ void APVZ_USFX_LAB02GameModeBase::MostrarContador() {
 	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, FString::Printf(TEXT("Proyectiles Lanzados: %d"), ContadorProyectiles));
 }
 
-AZombie* APVZ_USFX_LAB02GameModeBase::SpawnZombie(FVector _spawnPosition)
+AZombieCono* APVZ_USFX_LAB02GameModeBase::SpawnZombieCono(FVector _spawnPosition)
 {
 	FTransform SpawnLocation;
 	SpawnLocation.SetLocation(_spawnPosition);
-	return GetWorld()->SpawnActor<AZombie>(AZombie::StaticClass(), SpawnLocation);
+	return GetWorld()->SpawnActor<AZombieCono>(AZombieCono::StaticClass(), SpawnLocation);
 }
 
 APlant* APVZ_USFX_LAB02GameModeBase::SpawnPlant(FVector _spawnPosition)

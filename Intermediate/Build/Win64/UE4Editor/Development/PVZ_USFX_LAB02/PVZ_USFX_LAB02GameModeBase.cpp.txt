@@ -13,3 +13,9 @@ D:\Documentos\Universidad\SIS457 - Programacion Avanzada\PVZ_USFX_LAB02\Source\P
 D:\Documentos\Universidad\SIS457 - Programacion Avanzada\PVZ_USFX_LAB02\Intermediate\Build\Win64\UE4Editor\Inc\PVZ_USFX_LAB02\MauseController.generated.h
 D:\Documentos\Universidad\SIS457 - Programacion Avanzada\PVZ_USFX_LAB02\Source\PVZ_USFX_LAB02\Mause.h
 D:\Documentos\Universidad\SIS457 - Programacion Avanzada\PVZ_USFX_LAB02\Intermediate\Build\Win64\UE4Editor\Inc\PVZ_USFX_LAB02\Mause.generated.h
+D:\Documentos\Universidad\SIS457 - Programacion Avanzada\PVZ_USFX_LAB02\Source\PVZ_USFX_LAB02\ZombieCono.h
+D:\Documentos\Universidad\SIS457 - Programacion Avanzada\PVZ_USFX_LAB02\Intermediate\Build\Win64\UE4Editor\Inc\PVZ_USFX_LAB02\ZombieCono.generated.h
+D:\Documentos\Universidad\SIS457 - Programacion Avanzada\PVZ_USFX_LAB02\Source\PVZ_USFX_LAB02\CreatorZ_Terrestres.h
+D:\Documentos\Universidad\SIS457 - Programacion Avanzada\PVZ_USFX_LAB02\Source\PVZ_USFX_LAB02\CreatorZombies.h
+D:\Documentos\Universidad\SIS457 - Programacion Avanzada\PVZ_USFX_LAB02\Intermediate\Build\Win64\UE4Editor\Inc\PVZ_USFX_LAB02\CreatorZombies.generated.h
+D:\Documentos\Universidad\SIS457 - Programacion Avanzada\PVZ_USFX_LAB02\Intermediate\Build\Win64\UE4Editor\Inc\PVZ_USFX_LAB02\CreatorZ_Terrestres.generated.h

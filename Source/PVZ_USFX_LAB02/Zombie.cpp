@@ -14,11 +14,11 @@ AZombie::AZombie()
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> ZombieMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_QuadPyramid.Shape_QuadPyramid'"));
 	
 	SM_Zombie = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ZombieMesh"));
-	SM_Zombie->SetStaticMesh(ZombieMesh.Object);
+	//SM_Zombie->SetStaticMesh(ZombieMesh.Object);
 	SM_Zombie->SetCollisionProfileName(UCollisionProfile::BlockAll_ProfileName);
 	SM_Zombie->SetSimulatePhysics(true);
-	SM_Zombie->OnComponentBeginOverlap.AddDynamic(this, &AZombie::OnOverlapBeginFunction);
-	SM_Zombie->OnComponentHit.AddDynamic(this, &AZombie::OnHit);
+	// SM_Zombie->OnComponentBeginOverlap.AddDynamic(this, &AZombie::OnOverlapBeginFunction);
+	// SM_Zombie->OnComponentHit.AddDynamic(this, &AZombie::OnHit);
 	SM_Zombie->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
 	
 	RootComponent = SM_Zombie;
