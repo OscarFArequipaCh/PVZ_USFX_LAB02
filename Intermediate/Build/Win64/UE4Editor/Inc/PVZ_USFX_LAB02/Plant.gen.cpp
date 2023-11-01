@@ -17,8 +17,11 @@ void EmptyLinkFunctionForGeneratedCodePlant() {}
 	PVZ_USFX_LAB02_API UClass* Z_Construct_UClass_APlant();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	UPackage* Z_Construct_UPackage__Script_PVZ_USFX_LAB02();
+	PVZ_USFX_LAB02_API UClass* Z_Construct_UClass_ASpeaker_Plant_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
+	PVZ_USFX_LAB02_API UClass* Z_Construct_UClass_USubscriber_Plant_NoRegister();
+	PVZ_USFX_LAB02_API UClass* Z_Construct_UClass_UMorph_NoRegister();
 // End Cross Module References
 	void APlant::StaticRegisterNativesAPlant()
 	{
@@ -34,6 +37,10 @@ void EmptyLinkFunctionForGeneratedCodePlant() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Speaker_Plant_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Speaker_Plant;
+#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SM_Planta_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_SM_Planta;
@@ -46,6 +53,7 @@ void EmptyLinkFunctionForGeneratedCodePlant() {}
 #endif
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_FireRate;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+		static const UE4CodeGen_Private::FImplementedInterfaceParams InterfaceParams[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
 	};
@@ -59,6 +67,14 @@ void EmptyLinkFunctionForGeneratedCodePlant() {}
 		{ "ModuleRelativePath", "Plant.h" },
 	};
 #endif
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APlant_Statics::NewProp_Speaker_Plant_MetaData[] = {
+		{ "Comment", "//The Clock Tower of this Subscriber\n" },
+		{ "ModuleRelativePath", "Plant.h" },
+		{ "ToolTip", "The Clock Tower of this Subscriber" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APlant_Statics::NewProp_Speaker_Plant = { "Speaker_Plant", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APlant, Speaker_Plant), Z_Construct_UClass_ASpeaker_Plant_NoRegister, METADATA_PARAMS(Z_Construct_UClass_APlant_Statics::NewProp_Speaker_Plant_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APlant_Statics::NewProp_Speaker_Plant_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APlant_Statics::NewProp_SM_Planta_MetaData[] = {
 		{ "Category", "Plant" },
@@ -86,10 +102,15 @@ void EmptyLinkFunctionForGeneratedCodePlant() {}
 #endif
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_APlant_Statics::NewProp_FireRate = { "FireRate", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APlant, FireRate), METADATA_PARAMS(Z_Construct_UClass_APlant_Statics::NewProp_FireRate_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APlant_Statics::NewProp_FireRate_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_APlant_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlant_Statics::NewProp_Speaker_Plant,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlant_Statics::NewProp_SM_Planta,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlant_Statics::NewProp_GunOffset,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlant_Statics::NewProp_FireRate,
 	};
+		const UE4CodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_APlant_Statics::InterfaceParams[] = {
+			{ Z_Construct_UClass_USubscriber_Plant_NoRegister, (int32)VTABLE_OFFSET(APlant, ISubscriber_Plant), false },
+			{ Z_Construct_UClass_UMorph_NoRegister, (int32)VTABLE_OFFSET(APlant, IMorph), false },
+		};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_APlant_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<APlant>::IsAbstract,
 	};
@@ -100,11 +121,11 @@ void EmptyLinkFunctionForGeneratedCodePlant() {}
 		DependentSingletons,
 		nullptr,
 		Z_Construct_UClass_APlant_Statics::PropPointers,
-		nullptr,
+		InterfaceParams,
 		UE_ARRAY_COUNT(DependentSingletons),
 		0,
 		UE_ARRAY_COUNT(Z_Construct_UClass_APlant_Statics::PropPointers),
-		0,
+		UE_ARRAY_COUNT(InterfaceParams),
 		0x009000A4u,
 		METADATA_PARAMS(Z_Construct_UClass_APlant_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_APlant_Statics::Class_MetaDataParams))
 	};
@@ -117,7 +138,7 @@ void EmptyLinkFunctionForGeneratedCodePlant() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(APlant, 3950549881);
+	IMPLEMENT_CLASS(APlant, 2011459015);
 	template<> PVZ_USFX_LAB02_API UClass* StaticClass<APlant>()
 	{
 		return APlant::StaticClass();

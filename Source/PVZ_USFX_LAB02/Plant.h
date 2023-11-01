@@ -1,19 +1,24 @@
 // Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
-
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "Subscriber_Plant.h"
+#include "Morph.h"
 #include "Plant.generated.h"
-
+class ASpeaker_Plant;
 UCLASS()
-class PVZ_USFX_LAB02_API APlant : public AActor
+class PVZ_USFX_LAB02_API APlant : public AActor, public ISubscriber_Plant, public IMorph
 {
 	GENERATED_BODY()
 	
 public:	
 	// Sets default values for this actor's properties
 	APlant();
+
+private:
+	//The Clock Tower of this Subscriber
+	UPROPERTY()
+		ASpeaker_Plant* Speaker_Plant;
 
 protected:
 	// Called when the game starts or when spawned
@@ -54,4 +59,16 @@ public:
 
 	int32 ProyectilesDisparados;
 	FORCEINLINE int32 GetProyectilesDisparados() { return ProyectilesDisparados; }
+
+	//Called when this Subscriber is destroyed, it will unsubscribe this from the Clock Tower
+	virtual void Destroyed() override;
+public:
+	//Called when the Plublisher changed its state, it will execute this Subscriber routine
+	virtual void Update(class APublisher_Plant* Publisher) override;
+	//Execute this Subscriber routine
+	virtual void Morph();
+	//Set the Clock Tower of this Subscriber
+	void SetSpeaker(ASpeaker_Plant* mySpeaker_Plant);
+
+
 };

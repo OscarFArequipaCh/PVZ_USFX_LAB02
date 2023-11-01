@@ -17,6 +17,7 @@ void EmptyLinkFunctionForGeneratedCodePVZ_USFX_LAB02GameModeBase() {}
 	PVZ_USFX_LAB02_API UClass* Z_Construct_UClass_APVZ_USFX_LAB02GameModeBase();
 	ENGINE_API UClass* Z_Construct_UClass_AGameModeBase();
 	UPackage* Z_Construct_UPackage__Script_PVZ_USFX_LAB02();
+	PVZ_USFX_LAB02_API UClass* Z_Construct_UClass_ASpeaker_Plant_NoRegister();
 // End Cross Module References
 	void APVZ_USFX_LAB02GameModeBase::StaticRegisterNativesAPVZ_USFX_LAB02GameModeBase()
 	{
@@ -31,6 +32,11 @@ void EmptyLinkFunctionForGeneratedCodePVZ_USFX_LAB02GameModeBase() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Speaker_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Speaker;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
 	};
@@ -47,6 +53,15 @@ void EmptyLinkFunctionForGeneratedCodePVZ_USFX_LAB02GameModeBase() {}
 		{ "ShowCategories", "Input|MouseInput Input|TouchInput" },
 	};
 #endif
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APVZ_USFX_LAB02GameModeBase_Statics::NewProp_Speaker_MetaData[] = {
+		{ "ModuleRelativePath", "PVZ_USFX_LAB02GameModeBase.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APVZ_USFX_LAB02GameModeBase_Statics::NewProp_Speaker = { "Speaker", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APVZ_USFX_LAB02GameModeBase, Speaker), Z_Construct_UClass_ASpeaker_Plant_NoRegister, METADATA_PARAMS(Z_Construct_UClass_APVZ_USFX_LAB02GameModeBase_Statics::NewProp_Speaker_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APVZ_USFX_LAB02GameModeBase_Statics::NewProp_Speaker_MetaData)) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_APVZ_USFX_LAB02GameModeBase_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APVZ_USFX_LAB02GameModeBase_Statics::NewProp_Speaker,
+	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_APVZ_USFX_LAB02GameModeBase_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<APVZ_USFX_LAB02GameModeBase>::IsAbstract,
 	};
@@ -56,11 +71,11 @@ void EmptyLinkFunctionForGeneratedCodePVZ_USFX_LAB02GameModeBase() {}
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
 		nullptr,
-		nullptr,
+		Z_Construct_UClass_APVZ_USFX_LAB02GameModeBase_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
 		0,
-		0,
+		UE_ARRAY_COUNT(Z_Construct_UClass_APVZ_USFX_LAB02GameModeBase_Statics::PropPointers),
 		0,
 		0x009002ACu,
 		METADATA_PARAMS(Z_Construct_UClass_APVZ_USFX_LAB02GameModeBase_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_APVZ_USFX_LAB02GameModeBase_Statics::Class_MetaDataParams))
@@ -74,7 +89,7 @@ void EmptyLinkFunctionForGeneratedCodePVZ_USFX_LAB02GameModeBase() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(APVZ_USFX_LAB02GameModeBase, 3298652829);
+	IMPLEMENT_CLASS(APVZ_USFX_LAB02GameModeBase, 182875774);
 	template<> PVZ_USFX_LAB02_API UClass* StaticClass<APVZ_USFX_LAB02GameModeBase>()
 	{
 		return APVZ_USFX_LAB02GameModeBase::StaticClass();

@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-
 #include "Mause.h"
+#include "Plant.h"
 #include "HeadMountedDisplayFunctionLibrary.h"
 #include "Camera/CameraComponent.h"
 #include "GameFramework/PlayerController.h"
@@ -67,10 +67,5 @@ void AMause::OnResetVR()
 
 void AMause::TriggerClick()
 {
-	/*
-	if (CurrentBlockFocus)
-	{
-		CurrentBlockFocus->HandleClicked();
-	}*/
 }
 

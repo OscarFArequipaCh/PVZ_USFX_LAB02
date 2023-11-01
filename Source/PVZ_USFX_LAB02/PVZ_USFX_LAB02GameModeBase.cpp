@@ -7,6 +7,8 @@
 #include "Mause.h"
 #include "ZombieCono.h"
 #include "CreatorZ_Terrestres.h"
+#include "Speaker_Plant.h"
+
 APVZ_USFX_LAB02GameModeBase::APVZ_USFX_LAB02GameModeBase()
 {
 	PrimaryActorTick.bCanEverTick = true;
@@ -40,6 +42,8 @@ void APVZ_USFX_LAB02GameModeBase::BeginPlay()
 	}*/
 
 	//Se crean las plantas dinamicamente
+	ASpeaker_Plant* Speaker_Plant = GetWorld()->SpawnActor<ASpeaker_Plant>(ASpeaker_Plant::StaticClass());
+	Speaker = Speaker_Plant;
 	FVector SpawnLocationPlant = FVector(-450.0f, -550.0f, 20.0f);
 	FVector SpawnLocationPlantTemp = SpawnLocationPlant;
 
@@ -50,6 +54,7 @@ void APVZ_USFX_LAB02GameModeBase::BeginPlay()
 			SpawnLocationPlantTemp.Y += 100;
 			APlant* NuevoPlant = GetWorld()->SpawnActor<APlant>(APlant::StaticClass(), SpawnLocationPlantTemp, FRotator::ZeroRotator);
 			vectorPlants.Add(NuevoPlant);
+			NuevoPlant->SetSpeaker(Speaker_Plant);
 			//int claveMatriz = i+(j*10);
 			claveMatriz = claveMatriz + 1;
 			mapPlantas.Add(claveMatriz, NuevoPlant);
@@ -151,6 +156,7 @@ void APVZ_USFX_LAB02GameModeBase::MostrarContador() {
 	}
 	ContadorProyectiles -= aux;
 	UE_LOG(LogTemp, Warning, TEXT("Proyectiles Lanzados: %d"), ContadorProyectiles);
+	if (ContadorProyectiles >= 90 && ContadorProyectiles >= 100) { Speaker->SetOrderToPlant("Power"); };
 	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, FString::Printf(TEXT("Proyectiles Lanzados: %d"), ContadorProyectiles));
 }
 

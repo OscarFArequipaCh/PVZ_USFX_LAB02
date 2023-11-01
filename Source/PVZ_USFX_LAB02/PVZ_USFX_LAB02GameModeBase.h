@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
 #include "PVZ_USFX_LAB02GameModeBase.generated.h"
-class AZombieCono; class AZombie; class APlant;
+class AZombieCono; class AZombie; class APlant; class ASpeaker_Plant;
 /**
  * 
  */
@@ -24,6 +24,9 @@ private:
 	TMap<int32, APlant*> mapPlantas;
 
 	int32 NumberZombiesSpawned = 0;
+
+	UPROPERTY()
+		ASpeaker_Plant* Speaker;
 protected:
 
 	virtual void BeginPlay() override;

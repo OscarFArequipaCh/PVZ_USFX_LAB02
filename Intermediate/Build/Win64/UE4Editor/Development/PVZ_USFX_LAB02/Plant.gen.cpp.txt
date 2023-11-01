@@ -2,4 +2,8 @@ D:\Documentos\Universidad\SIS457 - Programacion Avanzada\PVZ_USFX_LAB02\Intermed
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
 D:\Documentos\Universidad\SIS457 - Programacion Avanzada\PVZ_USFX_LAB02\Source\PVZ_USFX_LAB02/Plant.h
+D:\Documentos\Universidad\SIS457 - Programacion Avanzada\PVZ_USFX_LAB02\Source\PVZ_USFX_LAB02\Subscriber_Plant.h
+D:\Documentos\Universidad\SIS457 - Programacion Avanzada\PVZ_USFX_LAB02\Intermediate\Build\Win64\UE4Editor\Inc\PVZ_USFX_LAB02\Subscriber_Plant.generated.h
+D:\Documentos\Universidad\SIS457 - Programacion Avanzada\PVZ_USFX_LAB02\Source\PVZ_USFX_LAB02\Morph.h
+D:\Documentos\Universidad\SIS457 - Programacion Avanzada\PVZ_USFX_LAB02\Intermediate\Build\Win64\UE4Editor\Inc\PVZ_USFX_LAB02\Morph.generated.h
 D:\Documentos\Universidad\SIS457 - Programacion Avanzada\PVZ_USFX_LAB02\Intermediate\Build\Win64\UE4Editor\Inc\PVZ_USFX_LAB02\Plant.generated.h

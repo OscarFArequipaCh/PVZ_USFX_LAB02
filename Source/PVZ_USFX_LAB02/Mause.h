@@ -23,4 +23,5 @@ public:
 protected:
 	void OnResetVR();
 	void TriggerClick();
+
 };

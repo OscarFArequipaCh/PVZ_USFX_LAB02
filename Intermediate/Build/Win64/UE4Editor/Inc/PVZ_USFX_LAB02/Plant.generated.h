@@ -22,7 +22,8 @@ private: \
 	friend struct Z_Construct_UClass_APlant_Statics; \
 public: \
 	DECLARE_CLASS(APlant, AActor, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/PVZ_USFX_LAB02"), NO_API) \
-	DECLARE_SERIALIZER(APlant)
+	DECLARE_SERIALIZER(APlant) \
+	virtual UObject* _getUObject() const override { return const_cast<APlant*>(this); }
 
 
 #define PVZ_USFX_LAB02_Source_PVZ_USFX_LAB02_Plant_h_12_INCLASS \
@@ -31,7 +32,8 @@ private: \
 	friend struct Z_Construct_UClass_APlant_Statics; \
 public: \
 	DECLARE_CLASS(APlant, AActor, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/PVZ_USFX_LAB02"), NO_API) \
-	DECLARE_SERIALIZER(APlant)
+	DECLARE_SERIALIZER(APlant) \
+	virtual UObject* _getUObject() const override { return const_cast<APlant*>(this); }
 
 
 #define PVZ_USFX_LAB02_Source_PVZ_USFX_LAB02_Plant_h_12_STANDARD_CONSTRUCTORS \
@@ -59,6 +61,7 @@ public: \
 
 
 #define PVZ_USFX_LAB02_Source_PVZ_USFX_LAB02_Plant_h_12_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__Speaker_Plant() { return STRUCT_OFFSET(APlant, Speaker_Plant); } \
 	FORCEINLINE static uint32 __PPO__SM_Planta() { return STRUCT_OFFSET(APlant, SM_Planta); }
 
 

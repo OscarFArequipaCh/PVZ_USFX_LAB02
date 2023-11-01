@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\PVZ_USFX_LAB02.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{182F5845-5CB8-484A-BF41-F9A3F2CA836C}</UniqueIdentifier>
+      <UniqueIdentifier>{E8B630AD-3688-4057-B3E1-0226FF70813A}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\PVZ_USFX_LAB02.Target.cs">
       <Filter>Source</Filter>
@@ -14,7 +14,7 @@
     <None Include="..\..\.gitattributes" />
     <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{41916437-DDB6-44CA-9FA4-4F7B679D7B5E}</UniqueIdentifier>
+      <UniqueIdentifier>{7A2424AA-E237-45EE-AE96-05D97159AA8A}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -29,7 +29,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\PVZ_USFX_LAB02">
-      <UniqueIdentifier>{947A7F6D-2949-418F-826F-E1C33B55ECC4}</UniqueIdentifier>
+      <UniqueIdentifier>{2B604431-359B-405A-9A84-D57B593855CE}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\PVZ_USFX_LAB02\CreatorZombies.cpp">
       <Filter>Source\PVZ_USFX_LAB02</Filter>
@@ -61,10 +61,22 @@
     <ClInclude Include="..\..\Source\PVZ_USFX_LAB02\Misiles.h">
       <Filter>Source\PVZ_USFX_LAB02</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\PVZ_USFX_LAB02\Morph.cpp">
+      <Filter>Source\PVZ_USFX_LAB02</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PVZ_USFX_LAB02\Morph.h">
+      <Filter>Source\PVZ_USFX_LAB02</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\PVZ_USFX_LAB02\Plant.cpp">
       <Filter>Source\PVZ_USFX_LAB02</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\PVZ_USFX_LAB02\Plant.h">
+      <Filter>Source\PVZ_USFX_LAB02</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PVZ_USFX_LAB02\Publisher_Plant.cpp">
+      <Filter>Source\PVZ_USFX_LAB02</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PVZ_USFX_LAB02\Publisher_Plant.h">
       <Filter>Source\PVZ_USFX_LAB02</Filter>
     </ClInclude>
     <None Include="..\..\Source\PVZ_USFX_LAB02\PVZ_USFX_LAB02.Build.cs">
@@ -92,6 +104,18 @@
       <Filter>Source\PVZ_USFX_LAB02</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\PVZ_USFX_LAB02\Sol.h">
+      <Filter>Source\PVZ_USFX_LAB02</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PVZ_USFX_LAB02\Speaker_Plant.cpp">
+      <Filter>Source\PVZ_USFX_LAB02</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PVZ_USFX_LAB02\Speaker_Plant.h">
+      <Filter>Source\PVZ_USFX_LAB02</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PVZ_USFX_LAB02\Subscriber_Plant.cpp">
+      <Filter>Source\PVZ_USFX_LAB02</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PVZ_USFX_LAB02\Subscriber_Plant.h">
       <Filter>Source\PVZ_USFX_LAB02</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\PVZ_USFX_LAB02\TP_TwinStick.h">

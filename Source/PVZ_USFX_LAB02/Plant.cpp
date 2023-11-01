@@ -4,20 +4,26 @@
 #include "Plant.h"
 #include "Misiles.h"
 #include "Zombie.h"
+#include "Publisher_Plant.h"
+#include "Speaker_Plant.h"
 
 // Sets default values
 APlant::APlant()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-	
+
+	//static ConstructorHelpers::FObjectFinderOptional<UMaterialInstance> BlueMaterial(TEXT("/Game/Puzzle/Meshes/BlueMaterial.BlueMaterial"));
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> PlantMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_NarrowCapsule.Shape_NarrowCapsule'"));
+
 	SM_Planta = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("SM_Planta"));
 	SM_Planta->SetStaticMesh(PlantMesh.Object);
 	SM_Planta->SetCollisionProfileName(UCollisionProfile::BlockAll_ProfileName);
 	SM_Planta->SetSimulatePhysics(false);
 	SM_Planta->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
 	RootComponent = SM_Planta;
+
+	
 
 	/*
 	if (ZombieMeshAsset.Succeeded())
@@ -129,3 +135,55 @@ float APlant::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AC
 	return Health;
 }
 
+void APlant::Destroyed()
+{
+	Super::Destroyed();
+	//Log Error if its Clock Tower is NULL
+	if (!Speaker_Plant) { UE_LOG(LogTemp, Error, TEXT("Destroyed():ClockTower is NULL, make sure it's initialized.")); return; }
+			//Unsubscribe from the Clock Tower if it's destroyed
+			Speaker_Plant->UnSubscribe(this);
+}
+
+void APlant::Update(APublisher_Plant * Publisher)
+{
+	//Execute the routine
+	Morph();
+}
+
+void APlant::Morph()
+{
+	//Log Error if its Clock Tower is NULL
+	if (!Speaker_Plant) { UE_LOG(LogTemp, Error, TEXT("Morph():ClockTower is NULL, make sure it's initialized.")); return; }
+			//Get the current time of the Clock Tower
+			FString Order = Speaker_Plant->GetOrder();
+		if (!Order.Compare("Power"))
+		{
+			//Execute the Morning routine
+			GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow,FString::Printf(TEXT("It is %s, so FreakyAllen makes a bowl of cereal"),*Order));
+				TiempoEntreDisparos = 0.5f;
+		}
+			/*else if (!Time.Compare("Midday"))
+			{
+				//Execute the Midday routine
+				GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow,
+					FString::Printf(TEXT("It is %s, so FreakyAllen's right eye starts to twitch"),
+						*Time));
+			}
+			else if (!Time.Compare("Evening"))
+			{
+				//Execute the Evening routine
+				GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow,
+					FString::Printf(TEXT("It is %s, so FreakyAllen morphs into a blood sucking
+						wogglesnort"), *Time));
+			}*/
+}
+
+void APlant::SetSpeaker(ASpeaker_Plant* mySpeaker_Plant)
+{
+	//Log Error if the passed Clock Tower is NULL
+	if (!mySpeaker_Plant) { UE_LOG(LogTemp, Error, TEXT("SetClockTower(): myClockTower is NULL, make sure it's initialized.")); return; }
+		//Set the Clock Tower and Subscribe to that
+		Speaker_Plant = mySpeaker_Plant;
+		Speaker_Plant->Subscribe(this);
+}
+	
