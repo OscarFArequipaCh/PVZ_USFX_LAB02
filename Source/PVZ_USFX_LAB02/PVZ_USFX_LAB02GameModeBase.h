@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
 #include "PVZ_USFX_LAB02GameModeBase.generated.h"
-class AZombieCono; class AZombie; class APlant; class ASpeaker_Plant;
+class AZombieCono; class AZombie; class APlant; class ASpeaker_Plant; class AEstrategia_EmbestirDanar;
 /**
  * 
  */
@@ -37,6 +37,9 @@ protected:
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
+	AEstrategia_EmbestirDanar* EstrategiaDanar;
+
 	float TiempoTranscurrido;
 
 	float TiempoTranscurridoC = 0.0f;

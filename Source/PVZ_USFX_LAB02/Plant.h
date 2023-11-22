@@ -32,8 +32,7 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	void FireShot(FVector FireDirection);
-	//void OnOverlapBegin(AActor* OverlappedActor, AActor* OtherActor);
-
+	
 	/** Offset from the ships location to spawn projectiles */
 	UPROPERTY(Category = Gameplay, EditAnywhere, BlueprintReadWrite)
 		FVector GunOffset;

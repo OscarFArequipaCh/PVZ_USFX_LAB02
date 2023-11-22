@@ -8,6 +8,8 @@
 #include "ZombieCono.h"
 #include "CreatorZ_Terrestres.h"
 #include "Speaker_Plant.h"
+#include "Estrategia_EmbestirDanar.h"
+#include "PlantEmbestida.h"
 
 APVZ_USFX_LAB02GameModeBase::APVZ_USFX_LAB02GameModeBase()
 {
@@ -44,7 +46,7 @@ void APVZ_USFX_LAB02GameModeBase::BeginPlay()
 	//Se crean las plantas dinamicamente
 	ASpeaker_Plant* Speaker_Plant = GetWorld()->SpawnActor<ASpeaker_Plant>(ASpeaker_Plant::StaticClass());
 	Speaker = Speaker_Plant;
-	FVector SpawnLocationPlant = FVector(-450.0f, -550.0f, 20.0f);
+	/*FVector SpawnLocationPlant = FVector(-450.0f, -550.0f, 20.0f);
 	FVector SpawnLocationPlantTemp = SpawnLocationPlant;
 
 	int claveMatriz = 0;
@@ -53,7 +55,7 @@ void APVZ_USFX_LAB02GameModeBase::BeginPlay()
 		for (int j = 0; j < 2; j++) {
 			SpawnLocationPlantTemp.Y += 100;
 			APlant* NuevoPlant = GetWorld()->SpawnActor<APlant>(APlant::StaticClass(), SpawnLocationPlantTemp, FRotator::ZeroRotator);
-			vectorPlants.Add(NuevoPlant);
+			//vectorPlants.Add(NuevoPlant);
 			NuevoPlant->SetSpeaker(Speaker_Plant);
 			//int claveMatriz = i+(j*10);
 			claveMatriz = claveMatriz + 1;
@@ -61,9 +63,18 @@ void APVZ_USFX_LAB02GameModeBase::BeginPlay()
 			//	SpawnLocationPlant = SpawnLocationPlantTemp;
 		}
 		SpawnLocationPlantTemp.Y = SpawnLocationPlant.Y;
-	}
+	}*/
 	// mapPlantas[0]->Destroy();
 	
+	EstrategiaDanar = GetWorld()->SpawnActor<AEstrategia_EmbestirDanar>(AEstrategia_EmbestirDanar::StaticClass());
+	FVector SpawnLocationPlant = FVector(-450.0f, -450.0f, 20.0f);
+	for (int i = 0; i < 5; i++) {
+		SpawnLocationPlant.X += 100;
+		APlantEmbestida* NuevoPlant = GetWorld()->SpawnActor<APlantEmbestida>(APlantEmbestida::StaticClass(), SpawnLocationPlant, FRotator::ZeroRotator);
+		NuevoPlant->setEstrategiaEmbestida(EstrategiaDanar);		//Añadir Estrategia
+		vectorPlants.Add(NuevoPlant);
+	}
+
 	FTransform SpawnLocation;
 	SpawnLocation.SetLocation(FVector(-350.0f, 350.0f, 20.0f));
 	float initialPositionX = -350.0f;
@@ -78,9 +89,9 @@ void APVZ_USFX_LAB02GameModeBase::BeginPlay()
 
 		vectorZombies.Add(CZombie);
 
-		AZombie* NZombie = CreadorZombie->OrderZombie("Normal", FVector(initialPositionX + i * 100.0f, initialPositionY - 100.0f, 20.0f));
+		//AZombie* NZombie = CreadorZombie->OrderZombie("Normal", FVector(initialPositionX + i * 100.0f, initialPositionY - 100.0f, 20.0f));
 		
-		vectorZombies.Add(NZombie);
+		//vectorZombies.Add(NZombie);
 		/*if (NewZombie)
 		{
 			NewZombie->SetSpawnAfter(FMath::RandRange(1, 10));
@@ -90,6 +101,9 @@ void APVZ_USFX_LAB02GameModeBase::BeginPlay()
 			vectorZombies.Add(NewZombie);
 		}*/
 	}
+
+	
+	
 }
 
 void APVZ_USFX_LAB02GameModeBase::Tick(float DeltaTime)

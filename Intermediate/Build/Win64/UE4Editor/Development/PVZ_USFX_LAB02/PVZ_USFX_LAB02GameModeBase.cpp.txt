@@ -27,3 +27,9 @@ D:\Documentos\Universidad\SIS457 - Programacion Avanzada\PVZ_USFX_LAB02\Source\P
 D:\Documentos\Universidad\SIS457 - Programacion Avanzada\PVZ_USFX_LAB02\Source\PVZ_USFX_LAB02\Publisher_Plant.h
 D:\Documentos\Universidad\SIS457 - Programacion Avanzada\PVZ_USFX_LAB02\Intermediate\Build\Win64\UE4Editor\Inc\PVZ_USFX_LAB02\Publisher_Plant.generated.h
 D:\Documentos\Universidad\SIS457 - Programacion Avanzada\PVZ_USFX_LAB02\Intermediate\Build\Win64\UE4Editor\Inc\PVZ_USFX_LAB02\Speaker_Plant.generated.h
+D:\Documentos\Universidad\SIS457 - Programacion Avanzada\PVZ_USFX_LAB02\Source\PVZ_USFX_LAB02\Estrategia_EmbestirDanar.h
+D:\Documentos\Universidad\SIS457 - Programacion Avanzada\PVZ_USFX_LAB02\Source\PVZ_USFX_LAB02\Estrategia_Embestida.h
+D:\Documentos\Universidad\SIS457 - Programacion Avanzada\PVZ_USFX_LAB02\Intermediate\Build\Win64\UE4Editor\Inc\PVZ_USFX_LAB02\Estrategia_Embestida.generated.h
+D:\Documentos\Universidad\SIS457 - Programacion Avanzada\PVZ_USFX_LAB02\Intermediate\Build\Win64\UE4Editor\Inc\PVZ_USFX_LAB02\Estrategia_EmbestirDanar.generated.h
+D:\Documentos\Universidad\SIS457 - Programacion Avanzada\PVZ_USFX_LAB02\Source\PVZ_USFX_LAB02\PlantEmbestida.h
+D:\Documentos\Universidad\SIS457 - Programacion Avanzada\PVZ_USFX_LAB02\Intermediate\Build\Win64\UE4Editor\Inc\PVZ_USFX_LAB02\PlantEmbestida.generated.h
