@@ -48,7 +48,8 @@ void APlantEmbestida::OnOverlapBeginFunction(UPrimitiveComponent* OverlappedComp
 				FireRate = 0.0f;
 				bCanFire = false;
 			}
-			OtherActor->Destroy();
+			//OtherActor->Destroy();
+			OtherActor->TakeDamage(100.0f, FDamageEvent(), nullptr, this);
 		}
 		else
 		{

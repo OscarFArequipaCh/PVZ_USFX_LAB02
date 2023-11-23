@@ -138,6 +138,7 @@ float AZombie::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, A
 	// Aquí puedes manejar el daño como desees, por ejemplo, actualizando la salud del actor.
 	Health -= DamageAmount;
 
+	if(Health <= 0) this->Destroy();
 	// Devuelve la cantidad de daño que se aplicó realmente.
 	return Health;
 }

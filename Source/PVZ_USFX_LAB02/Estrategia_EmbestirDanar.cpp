@@ -32,19 +32,22 @@ void AEstrategia_EmbestirDanar::HabilidadEmbestir(APlantEmbestida* _plantaEmbest
 	PlantEmbestida = _plantaEmbestida;
 
 	FVector LocalizacionObjetivo = PlantEmbestida->GetActorLocation();
-	LocalizacionObjetivo.Y = 600.0f;
+	
+	if (LocalizacionObjetivo.Y >= 550.0f) PlantEmbestida->bCanMove = false;
+
+	LocalizacionObjetivo.Y = 550.0f;
 
 	FVector Direction = LocalizacionObjetivo - PlantEmbestida->GetActorLocation();
 	float DistanceToTarget = FVector::Dist(LocalizacionObjetivo, PlantEmbestida->GetActorLocation());
 
 	// Calcula el desplazamiento en este frame
-	float DeltaMove = 0.2f * GetWorld()->DeltaTimeSeconds;
+	float DeltaMove = 0.4f * GetWorld()->DeltaTimeSeconds;
 
 	if (DeltaMove > DistanceToTarget)
 	{
 		// Si el desplazamiento excede la distancia al objetivo, mueve directamente al objetivo
 		PlantEmbestida->SetActorLocation(LocalizacionObjetivo);
-		
+
 		// PlantEmbestida->Destroy();
 	}
 	else

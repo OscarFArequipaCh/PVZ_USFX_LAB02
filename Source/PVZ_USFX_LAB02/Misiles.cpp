@@ -37,7 +37,7 @@ AMisiles::AMisiles()
 	//MaxDistance = 1000.0f;
 	InitialLifeSpan = 3.0f;
 	//InitialLifeSpan = MaxDistance / ProjectileMovement->InitialSpeed;
-	Damage = 10.0f;
+	Damage = 1.0f;
 	
 }
 
